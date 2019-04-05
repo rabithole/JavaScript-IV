@@ -8,12 +8,12 @@ class Person {
 	}
 
 	speak() {
-		return `Hello, my name is ${this.name}`;
+		return `Hello, my name is ${this.name}.`;
 	}
 }
 
 class Instructor extends Person {
-	constructor(attrs, subject) {
+	constructor(attrs) {
 		super(attrs);
 
 		this.specialty = attrs.specialty;
@@ -22,10 +22,10 @@ class Instructor extends Person {
 	}
 
 	demo(subject) {
-		return `Today we are learning about ${subject}`;
-	}
+		return `Today we are learning about ${subject}.`;
+	};
 	grade(subject) {
-		`${this.name} receives a perfect score on ${subject}`;
+		return `${this.name} receives a perfect score on ${subject}.`;
 	}
 }
 
@@ -97,10 +97,11 @@ const jibby = new ProjectManager ({
 	favInstructor: 'Cam Pope'
 });
 
-console.log(fred.demo);
+console.log(fred.demo('Redux'));
 console.log(fred.catchPhrase);
 console.log(fred.demo('CSS'));
-console.log(fred.grade('B'));
+console.log(fred.grade('JS IV'));
+console.log(fred.speak())
 
 console.log(bobo.name);
 console.log(bobo.speak());
