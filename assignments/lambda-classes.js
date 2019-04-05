@@ -13,7 +13,7 @@ class Person {
 }
 
 class Instructor extends Person {
-	constructor(attrs) {
+	constructor(attrs, subject) {
 		super(attrs);
 
 		this.specialty = attrs.specialty;
@@ -21,11 +21,11 @@ class Instructor extends Person {
 		this.catchPhrase = attrs.catchPhrase;
 	}
 
-	demo() {
+	demo(subject) {
 		return `Today we are learning about ${subject}`;
 	}
-	grade() {
-		`${student.name} receives a perfect score on ${subject}`;
+	grade(subject) {
+		`${this.name} receives a perfect score on ${subject}`;
 	}
 }
 
@@ -75,4 +75,33 @@ const fred = new Instructor({
   catchPhrase: `Don't forget the homies`
 });
 
-console.log(fred.catchPhrase)
+const bobo = new Student ({
+	name: 'Bobo',
+	location: 'Outer Space',
+	age: 2024,
+	gender: 'Tog',
+	favSubjects: 'Warp Physics',
+	previousBackground: 'Space Captain',
+	className: 'CS 201,105'
+});
+
+const jibby = new ProjectManager ({
+	name: 'Jibby',
+	age: 23,
+	location: 'Russia',
+	gender: 'Male',
+	specialty: 'JavaScript',
+	favLanguage: 'Basic',
+	catchPhrase: "Let's get Jibby",
+	gradClassName: 'CS 20',
+	favInstructor: 'Cam Pope'
+});
+
+console.log(fred.demo);
+console.log(fred.catchPhrase);
+console.log(fred.demo('CSS'));
+console.log(fred.grade('B'));
+
+console.log(bobo.name);
+console.log(bobo.speak());
+console.log(bobo.previousBackground);
